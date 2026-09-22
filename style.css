@@ -1,0 +1,1073 @@
+/* ============================================
+   RESET
+   ============================================ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ============================================
+   BODY
+   ============================================ */
+
+body {
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background:
+        radial-gradient(
+            circle at top,
+            #32132f 0%,
+            #160b18 35%,
+            #08080c 100%
+        );
+
+    color: white;
+
+    font-family: Arial, sans-serif;
+
+    text-align: center;
+
+    overflow-x: hidden;
+
+    overflow-y: auto;
+}
+
+
+/* ============================================
+   TELAS
+   ============================================ */
+
+.inicio,
+.aniversario,
+.namoro {
+
+    width: 90%;
+
+    max-width: 650px;
+
+    padding: 50px 0;
+}
+
+
+/* ============================================
+   TELA INICIAL
+   ============================================ */
+
+.inicio {
+
+    animation: aparecer 1s ease;
+
+}
+
+
+/* ============================================
+   CORAÇÃO
+   ============================================ */
+
+.coracao {
+
+    font-size: 60px;
+
+    margin-bottom: 30px;
+
+    animation: batida 1.5s infinite;
+
+}
+
+
+@keyframes batida {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    25% {
+        transform: scale(1.12);
+    }
+
+    50% {
+        transform: scale(1);
+    }
+
+}
+
+
+/* ============================================
+   TÍTULOS
+   ============================================ */
+
+h1 {
+
+    font-size: 30px;
+
+    margin-bottom: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffb3d9,
+            #ff69b4,
+            #ff1493
+        );
+
+    -webkit-background-clip: text;
+
+    -webkit-text-fill-color: transparent;
+
+}
+
+
+h2 {
+
+    font-size: 24px;
+
+    margin-bottom: 20px;
+
+    color: #ff69b4;
+
+}
+
+
+p {
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+}
+
+
+/* ============================================
+   CONTADORES
+   ============================================ */
+
+#contador,
+#contadorNameNamoro {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 35px;
+
+    flex-wrap: wrap;
+
+}
+
+
+#contador div,
+#contadorNameNamoro div {
+
+    min-width: 75px;
+
+    padding: 15px 10px;
+
+    background:
+        rgba(255, 105, 180, 0.08);
+
+    border:
+
+        1px solid
+        rgba(255, 105, 180, 0.35);
+
+    border-radius: 15px;
+
+    backdrop-filter: blur(10px);
+
+}
+
+
+#contador span,
+#contadorNameNamoro span {
+
+    display: block;
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    color: #ff8bc7;
+
+}
+
+
+#contador small,
+#contadorNameNamoro small {
+
+    display: block;
+
+    margin-top: 5px;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    opacity: 0.7;
+
+}
+
+
+.texto-secreto {
+
+    margin-top: 35px;
+
+    font-size: 13px;
+
+    opacity: 0.45;
+
+}
+
+
+/* ============================================
+   TELA ANIVERSÁRIO
+   ============================================ */
+
+.aniversario {
+
+    display: none;
+
+    animation: entradaAniversario 1.5s ease;
+
+}
+
+
+@keyframes entradaAniversario {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.85)
+            translateY(40px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+
+    }
+
+}
+
+
+.aniversario h1 {
+
+    font-size: 38px;
+
+}
+
+
+.intro-aniversario {
+
+    max-width: 500px;
+
+    margin: 0 auto;
+
+    opacity: 0.85;
+
+}
+
+
+/* ============================================
+   BRILHOS
+   ============================================ */
+
+.brilhos,
+.brilhos-namoro {
+
+    font-size: 35px;
+
+    margin-bottom: 25px;
+
+    animation: brilho 1.5s infinite alternate;
+
+}
+
+
+@keyframes brilho {
+
+    from {
+
+        transform: scale(1);
+
+        opacity: 0.5;
+
+    }
+
+    to {
+
+        transform: scale(1.15);
+
+        opacity: 1;
+
+    }
+
+}
+
+
+/* ============================================
+   BOLO
+   ============================================ */
+
+.container-bolo {
+
+    margin: 40px 0 20px;
+
+}
+
+
+.bolo {
+
+    display: flex;
+
+    flex-direction: column-reverse;
+
+    align-items: center;
+
+    justify-content: flex-end;
+
+    height: 190px;
+
+    position: relative;
+
+}
+
+
+.camada {
+
+    height: 40px;
+
+    margin: -7px 0;
+
+    border-radius: 50%;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+
+    box-shadow:
+        0 5px 15px
+        rgba(0, 0, 0, 0.5);
+
+}
+
+
+.camada.construindo {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+}
+
+
+.camada1 {
+
+    width: 200px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b4513,
+            #cd853f
+        );
+
+}
+
+
+.camada2 {
+
+    width: 150px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #a0522d,
+            #d2691e
+        );
+
+}
+
+
+.camada3 {
+
+    width: 105px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b4513,
+            #cd853f
+        );
+
+}
+
+
+/* ============================================
+   VELA
+   ============================================ */
+
+.vela {
+
+    width: 9px;
+
+    height: 40px;
+
+    background:
+        linear-gradient(
+            #ffd700,
+            #ff8c00
+        );
+
+    border-radius: 5px;
+
+    position: absolute;
+
+    top: 20px;
+
+    opacity: 0;
+
+    transform: scale(0);
+
+}
+
+
+.vela.construindo {
+
+    opacity: 1;
+
+    transform: scale(1);
+
+    animation: chama 0.7s infinite alternate;
+
+}
+
+
+@keyframes chama {
+
+    from {
+
+        box-shadow:
+            0 0 8px #ffd700;
+
+    }
+
+    to {
+
+        box-shadow:
+            0 0 25px #ff9900;
+
+    }
+
+}
+
+
+/* ============================================
+   MENSAGEM DO BOLO
+   ============================================ */
+
+.mensagem-bolo {
+
+    font-size: 14px;
+
+    margin-top: 15px;
+
+    color: #ffb3d9;
+
+    transition: 0.5s;
+
+}
+
+
+.mensagem-bolo.piscando {
+
+    animation: piscar 1s infinite alternate;
+
+}
+
+
+@keyframes piscar {
+
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* ============================================
+   GALERIA
+   ============================================ */
+
+.memorias {
+
+    margin-top: 50px;
+
+    padding: 25px 0;
+
+}
+
+
+.memorias h2 {
+
+    font-size: 25px;
+
+}
+
+
+.subtitulo-memorias {
+
+    font-size: 14px;
+
+    opacity: 0.65;
+
+    margin-bottom: 25px;
+
+}
+
+
+.galeria {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 12px;
+
+    max-width: 520px;
+
+    margin: auto;
+
+}
+
+
+.foto {
+
+    aspect-ratio: 1 / 1;
+
+    overflow: hidden;
+
+    border-radius: 18px;
+
+    border:
+        2px solid
+        rgba(255, 105, 180, 0.4);
+
+    box-shadow:
+        0 5px 20px
+        rgba(0, 0, 0, 0.45);
+
+    background: #151015;
+
+    animation: fotoEntrada 0.8s ease both;
+
+}
+
+
+.foto:nth-child(2) {
+    animation-delay: 0.15s;
+}
+
+
+.foto:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+
+.foto:nth-child(4) {
+    animation-delay: 0.45s;
+}
+
+
+.foto img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+    transition:
+        transform 0.5s ease;
+
+}
+
+
+.foto:hover img {
+
+    transform: scale(1.08);
+
+}
+
+
+@keyframes fotoEntrada {
+
+    from {
+
+        opacity: 0;
+
+        transform:
+            scale(0.85);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform:
+            scale(1);
+
+    }
+
+}
+
+
+.texto-memoria {
+
+    margin-top: 25px;
+
+    font-size: 15px;
+
+    color: #ffb3d9;
+
+}
+
+
+/* ============================================
+   PRESENTES
+   ============================================ */
+
+.presentes {
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 25px;
+
+    margin: 35px 0;
+
+}
+
+
+.presente {
+
+    font-size: 48px;
+
+    animation:
+        flutuar 2s
+        ease-in-out
+        infinite;
+
+}
+
+
+.presente:nth-child(2) {
+
+    animation-delay: 0.3s;
+
+}
+
+
+.presente:nth-child(3) {
+
+    animation-delay: 0.6s;
+
+}
+
+
+@keyframes flutuar {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-12px);
+
+    }
+
+}
+
+
+/* ============================================
+   BOTÃO
+   ============================================ */
+
+.botao-surpresa {
+
+    margin-top: 20px;
+
+    padding: 15px 35px;
+
+    border: none;
+
+    border-radius: 30px;
+
+    color: white;
+
+    font-size: 15px;
+
+    font-weight: bold;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff69b4,
+            #ff1493
+        );
+
+    box-shadow:
+        0 5px 20px
+        rgba(255, 20, 147, 0.35);
+
+    cursor: pointer;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        opacity 0.5s;
+
+}
+
+
+.botao-surpresa:hover {
+
+    transform:
+        scale(1.05);
+
+    box-shadow:
+        0 8px 25px
+        rgba(255, 20, 147, 0.55);
+
+}
+
+
+.botao-surpresa:active {
+
+    transform:
+        scale(0.95);
+
+}
+
+
+/* ============================================
+   MENSAGEM ESPECIAL
+   ============================================ */
+
+.mensagem-especial {
+
+    margin-top: 30px;
+
+    padding: 20px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(255, 105, 180, 0.08);
+
+    border:
+        1px solid
+        rgba(255, 105, 180, 0.25);
+
+    opacity: 0;
+
+    max-height: 0;
+
+    overflow: hidden;
+
+    transition:
+        all 0.7s ease;
+
+}
+
+
+.mensagem-especial.ativa {
+
+    opacity: 1;
+
+    max-height: 300px;
+
+}
+
+
+.segunda-mensagem {
+
+    margin-top: 15px;
+
+    font-size: 14px;
+
+    color: #ffb3d9;
+
+}
+
+
+/* ============================================
+   TELA NAMORO
+   ============================================ */
+
+.namoro {
+
+    display: none;
+
+    animation:
+        entradaAniversario
+        1.2s
+        ease;
+
+}
+
+
+.namoro h1 {
+
+    font-size: 32px;
+
+}
+
+
+.namoro h2 {
+
+    font-size: 22px;
+
+}
+
+
+.coracao-grande {
+
+    font-size: 80px;
+
+    margin: 40px 0;
+
+    animation:
+        batida
+        1.5s
+        infinite;
+
+}
+
+
+.msg-final {
+
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    color: #ffb3d9;
+
+}
+
+
+.final-assinatura {
+
+    margin-top: 45px;
+
+    font-size: 12px;
+
+    opacity: 0.4;
+
+}
+
+
+/* ============================================
+   CONFETE
+   ============================================ */
+
+.container-confete {
+
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: 10;
+
+}
+
+
+.confete-item {
+
+    position: fixed;
+
+    top: -40px;
+
+    font-size: 24px;
+
+    animation:
+        cair 4s linear forwards;
+
+}
+
+
+@keyframes cair {
+
+    to {
+
+        transform:
+            translateY(110vh)
+            rotate(360deg);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* ============================================
+   MOBILE
+   ============================================ */
+
+@media (max-width: 600px) {
+
+    .inicio,
+    .aniversario,
+    .namoro {
+
+        width: 90%;
+
+        padding: 35px 0;
+
+    }
+
+
+    h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .aniversario h1 {
+
+        font-size: 31px;
+
+    }
+
+
+    h2 {
+
+        font-size: 21px;
+
+    }
+
+
+    .coracao {
+
+        font-size: 50px;
+
+    }
+
+
+    #contador div,
+    #contadorNameNamoro div {
+
+        min-width: 62px;
+
+        padding: 12px 7px;
+
+    }
+
+
+    #contador span,
+    #contadorNameNamoro span {
+
+        font-size: 22px;
+
+    }
+
+
+    .camada1 {
+
+        width: 160px;
+
+    }
+
+
+    .camada2 {
+
+        width: 125px;
+
+    }
+
+
+    .camada3 {
+
+        width: 90px;
+
+    }
+
+
+    .galeria {
+
+        gap: 8px;
+
+    }
+
+
+    .foto {
+
+        border-radius: 13px;
+
+    }
+
+
+    .presente {
+
+        font-size: 40px;
+
+    }
+
+
+    .coracao-grande {
+
+        font-size: 65px;
+
+    }
+
+}
